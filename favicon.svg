@@ -1,0 +1,11 @@
+<svg width="100%" height="100%" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <style>
+        text { fill: #000; }
+        @media (prefers-color-scheme: dark) {
+            text { fill: #fff; }
+        }
+    </style>
+    <g transform="matrix(1,0,0,1,-0.794417,11.4829)">
+        <text x="6.534px" y="11.641px" style="font-family:'Lato-Regular', 'Lato', sans-serif;font-size:25px;">tg</text>
+    </g>
+</svg>

@@ -9,33 +9,72 @@ a {
   text-transform: lowercase;
   color: black;
   text-decoration: none;
+  opacity: inherit;
 }
-svg {
+#menu {
   height: 1em;
   width: 1em;
   top: 0.125em;
   position: relative;
   margin-right: 0.75em;
-}
-svg:hover {
   cursor: pointer;
 }
-svg:hover > #upper {
-  transform: rotate(45deg);
+.line {
+  fill: none;
+  stroke: black;
+  stroke-width:8;
 }
-/* .svg-container {
-  display: inline-flex;
-  align-self: center;
-} */
-/* a:hover {
-  filter: brightness(-150%);
-} */
+#menu #upper, #menu #lower {
+  transition: transform 0.5s ease;
+  transform: translate(0,0), rotate(0);
+  transform-origin: 50px 50px;
+  
+}
+#menu.opened #upper {
+  transform: translate(-10px, 10px) rotate(45deg);
+}
+#menu.opened #lower {
+  transform: translate(-10px, -10px) rotate(-45deg);
+}
 
 body {
   background-color: #eee;
   font-size: 1.2rem;
 
   font-family: "Lato", sans-serif;
+}
+
+#signature {
+  height: 5em;
+}
+#signature > path {
+  stroke-dasharray: 450;
+  stroke-dashoffset: 450;
+  animation: draw 2s linear forwards;
+}
+
+#signature > path:nth-child(2) {
+  animation-delay: 400ms;
+}
+#signature > path:nth-child(3) {
+  animation-delay: 800ms;
+}
+#signature > path:nth-child(4) {
+  animation-delay: 1200ms;
+}
+#signature > path:nth-child(5) {
+  animation-delay: 1500ms;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes opacity {
+  to {
+    opacity: 1;
+  }
 }
 
 .top,
@@ -47,6 +86,9 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  opacity: 0;
+  animation: opacity 1.5s ease 2s forwards;
 }
 .top {
   top: 2em;
@@ -62,4 +104,11 @@ body {
 
 .gray {
   color: gray;
+}
+
+.center {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
