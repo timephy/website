@@ -11,7 +11,12 @@ a {
   text-decoration: none;
   opacity: inherit;
 }
-#menu {
+#hamburger > path {
+  fill: none;
+  stroke: black;
+  stroke-width:8;
+}
+#hamburger {
   height: 1em;
   width: 1em;
   top: 0.125em;
@@ -19,22 +24,21 @@ a {
   margin-right: 0.75em;
   cursor: pointer;
 }
-.line {
-  fill: none;
-  stroke: black;
-  stroke-width:8;
-}
-#menu #upper, #menu #lower {
-  transition: transform 0.5s ease;
+#hamburger #upper, #hamburger #lower {
+  transition: transform 0.25s ease;
   transform: translate(0,0), rotate(0);
   transform-origin: 50px 50px;
   
 }
-#menu.opened #upper {
+#hamburger.opened #upper {
   transform: translate(-10px, 10px) rotate(45deg);
 }
-#menu.opened #lower {
+#hamburger.opened #lower {
   transform: translate(-10px, -10px) rotate(-45deg);
+}
+#name-container {
+  display: flex;
+  gap: 0.25em;
 }
 
 body {
@@ -52,7 +56,6 @@ body {
   stroke-dashoffset: 450;
   animation: draw 2s linear forwards;
 }
-
 #signature > path:nth-child(2) {
   animation-delay: 400ms;
 }
@@ -80,8 +83,8 @@ body {
 .top,
 .bottom {
   position: absolute;
-  left: 2em;
-  right: 2em;
+  left: 1.5em;
+  right: 1.5em;
 
   display: flex;
   flex-direction: row;
@@ -91,10 +94,13 @@ body {
   animation: opacity 1.5s ease 2s forwards;
 }
 .top {
-  top: 2em;
+  top: 1.5em;
 }
 .bottom {
-  bottom: 2em;
+  bottom: 1.5em;
+}
+#top-left {
+  display: flex;
 }
 
 .list {
@@ -112,3 +118,38 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+  #name-container {
+    flex-direction: column;
+    gap: 0.1em;
+  }
+
+  .top,
+.bottom {
+  position: absolute;
+  left: 1em;
+  right: 1em;
+}
+.top {
+  top: 1em;
+}
+.bottom {
+  bottom: 1em;
+}
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+/* @media (min-width: 481px) and (max-width: 767px) {
+  body {
+      background-color: yellow;
+  }
+} */
+
+/* Media Query for Tablets Ipads portrait mode */
+/* @media (min-width: 768px) and (max-width: 1024px){
+  body {
+      background-color: blue;
+  }
+} */
