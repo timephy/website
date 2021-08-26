@@ -14,7 +14,7 @@
 <body>
   <div class="top">
     <div id="top-left">
-      <svg id="hamburger" width="100" height="100" viewBox="0 0 100 100" onclick="this.classList.toggle('opened')">
+      <svg id="hamburger" width="100" height="100" viewBox="0 0 100 100" onclick="clickHamburger()">
         <path id="upper" d="M0,35h100" />
         <path id="lower" d="M0,65h100" />
       </svg>
@@ -33,11 +33,11 @@
     </div>
     <div class="list">
       <a href="https://www.youtube.com/channel/UCjhQyPRPRjCYyczaBgs7g1Q">YouTube</a>
-      <!-- <a href="https://github.com/timephy">GitHub</a>
+      <a href="https://github.com/timephy">GitHub</a>
       <a href="https://gitlab.com/timephy">GitLab</a>
       <a href="https://www.instagram.com/tim.guggenmos">Instagram</a>
       <a href="https://twitter.com/timephy">Twitter</a>
-      <a href="https://www.linkedin.com/in/tim-guggenmos-7b9610148">LinkedIn</a> -->
+      <a href="https://www.linkedin.com/in/tim-guggenmos-7b9610148">LinkedIn</a>
     </div>
   </div>
   <div class="center">
@@ -56,7 +56,30 @@
         d="M46.23,32.359C45.821,32.448 46.396,40.383 51.278,40.822C56.161,41.261 60.085,33.146 62.388,35.206C64.079,36.718 64.678,39.04 71.326,39.562C76.869,39.998 91.413,38.458 96.855,39.123C99.738,39.476 105.355,42.018 105.355,42.018"
         style="fill:none;stroke:black;stroke-width:4px;" />
     </svg>
+    <div id="menu-container" class="hidden">
+      <div id="menu">
+        <a href="https://www.youtube.com/channel/UCjhQyPRPRjCYyczaBgs7g1Q">YouTube</a>
+        <a href="https://github.com/timephy">GitHub</a>
+        <a href="https://gitlab.com/timephy">GitLab</a>
+        <a href="https://www.instagram.com/tim.guggenmos">Instagram</a>
+        <a href="https://twitter.com/timephy">Twitter</a>
+        <a href="https://www.linkedin.com/in/tim-guggenmos-7b9610148">LinkedIn</a>
+      </div>
+    </div>
   </div>
 </body>
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const signature = document.getElementById("signature");
+  const menuContainer = document.getElementById("menu-container");
+  let menuOpen = false;
+
+  function clickHamburger() {
+    menuOpen = !menuOpen;
+    hamburger.classList.toggle('opened', menuOpen)
+    signature.classList.toggle('hidden', menuOpen)
+    menuContainer.classList.toggle('hidden', !menuOpen)
+  }
+</script>
 
 </html>
