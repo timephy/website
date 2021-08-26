@@ -47,6 +47,12 @@ a:hover {
   gap: 0.25em;
 }
 
+hr {
+  width: 35vw;               
+  background-color:#000;
+  height: 2px;
+}
+
 body {
   background-color: #eee;
   font-size: 1.2rem;
